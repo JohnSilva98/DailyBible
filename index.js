@@ -13,7 +13,6 @@ const client = new Client({
   ],
 });
 const prefix = "!"; // Prefixo do bot
-// const bibleAPIKey = "9e66080f7c7b52d8dedf61bc1afb5924";
 
 client.once("ready", () => {
   console.log("Bot está online!");
@@ -23,6 +22,14 @@ client.on("message", (message) => {
   if (message.content.startsWith(prefix) || message.author.bot) return;
 
   // Se quiser comandos adicionais, pode adicionar aqui
+  if (message.content.toLowerCase() === `${prefix}ping`) {
+    const pingMessage = message.channel.send("Pingando...");
+
+    // Calcula a latência do bot
+    const latency = pingMessage.createdTimestamp - message.createdTimestamp;
+
+    pingMessage.edit(`Pong! Latência: ${latency}ms`);
+  }
 });
 
 async function enviarVersiculoAleatorio(channel) {
