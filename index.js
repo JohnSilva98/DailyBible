@@ -22,25 +22,13 @@ client.on("message", (message) => {
   if (message.content.startsWith(prefix) || message.author.bot) return;
 
   // Se quiser comandos adicionais, pode adicionar aqui
-  if (message.content.toLowerCase() === `${prefix}ping`) {
-    const pingMessage = message.channel.send("Pingando...");
-
-    // Calcula a latência do bot
-    const latency = pingMessage.createdTimestamp - message.createdTimestamp;
-
-    pingMessage.edit(`Pong! Latência: ${latency}ms`);
-  }
 });
 
 async function enviarVersiculoAleatorio(channel) {
   try {
     const response = await axios.get(
       "https://www.abibliadigital.com.br/api/verses/nvi/random",
-      {
-        // headers: {
-        //   Authorization: `Bearer ${bibleAPIKey}`,
-        // },
-      }
+      {}
     );
 
     const versiculo = response.data;
