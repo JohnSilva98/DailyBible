@@ -1,5 +1,9 @@
 const { Client, GatewayIntentBits } = require("discord.js");
 const axios = require("axios");
+// dotenv
+const dotenv = require("dotenv");
+dotenv.config();
+const { TOKEN, CLIENT_ID, GUILD_ID } = process.env;
 
 const client = new Client({
   intents: [
@@ -81,6 +85,4 @@ client.on("ready", () => {
   }, diferenca);
 });
 
-client.login(
-  "MTE5OTcyNTUzODM1MzM2OTE0OA.GDV78d.Z5LI_LTJ_1z6zSCcnsRwrEhKlT_lnX0of1RosI"
-);
+client.login(TOKEN);
