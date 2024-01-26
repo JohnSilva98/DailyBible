@@ -1,4 +1,5 @@
-##DailyBible, o bot que envia versículos diáriamente no seu servidor do Discord
+##
+DailyBible, o bot que envia versículos diáriamente no seu servidor do Discord
 
 
 
